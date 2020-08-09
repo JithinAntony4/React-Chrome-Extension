@@ -11,11 +11,11 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start:react": "cd react/ && npm run start && tsc",
-    "build:react": "cd react/ && npm run build && tsc",
+    "start": "tsc && cd react/ && npm run start",
+    "build": "tsc && cd react/ && npm run build",
+    "build:production": "tsc && clean-ext.sh && cd react/ && npm run build",
+    "build:extension": "migrate-ext.sh",
     "eject:react": "cd react/ && npm run eject",
-    "migrate": "migrate-ext.sh",
-    "clean": "clean-ext.sh",
     "test:react": "cd react/ &&  npm run test"
   },
   "repository": {

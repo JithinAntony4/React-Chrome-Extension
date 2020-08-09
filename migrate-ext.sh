@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 rm -rf dist/chrome/*
 mkdir -p dist/chrome
 cp chrome/* dist/chrome/ -r

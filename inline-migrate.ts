@@ -19,6 +19,24 @@ class InlineMigrate {
             })
         })
     }
+
+    updateSourceFile(content: string): Promise<any> {
+        return new Promise((resolve, reject) => {
+            fs.writeFile(this.srcPath, content, function (err: NodeJS.ErrnoException) {
+                if (err) reject(err);
+                resolve('Success')
+            });
+        })
+    }
+
+    writeFile(content: string): Promise<any> {
+        return new Promise((resolve, reject) => {
+            fs.writeFile(this.destPath, content, function (err: NodeJS.ErrnoException) {
+                if (err) reject(err);
+                resolve('Success')
+            });
+        })
+    }
 }
 
 const init = async () => {
@@ -27,6 +45,10 @@ const init = async () => {
 
     let buffer = await inlineMigrate.openSourceFile();
     let content = buffer.toString("utf8");
-
-
+    let regExp = new RegExp("\<(script)\>(.*?)\<\/(script)\>");
+    let regExpMatchArray = content.match(regExp);
+    let replacingWord = regExpMatchArray[2];
+    await inlineMigrate.updateSourceFile(content.replace(regExpMatchArray[0], '<script src="index.js"></script>'))
+    await inlineMigrate.writeFile(replacingWord)
 }
+init()

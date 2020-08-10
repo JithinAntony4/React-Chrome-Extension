@@ -16,6 +16,7 @@
     "build:production": "tsc && clean-ext.sh && cd react/ && npm run build",
     "build:extension": "migrate-ext.sh",
     "eject:react": "cd react/ && npm run eject",
+    "pack": "cd dist/chrome && bestzip ../../extension-build.zip *",
     "test:react": "cd react/ &&  npm run test"
   },
   "repository": {
@@ -30,6 +31,7 @@
   },
   "homepage": "https://github.com/JithinAntony4/React-Chrome-Extension#readme",
   "devDependencies": {
+    "bestzip": "^2.1.6",
     "tslint": "^6.1.3",
     "typescript": "^3.9.7"
   }

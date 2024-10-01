@@ -1,7 +1,7 @@
 # React Chrome Extension Boilerplate with React and Webpack 4
 #### ~~This is part of [generate-chrome-extension](https://github.com/JithinAntony4/generate-chrome-extension)~~
 ## Features 
-
+ 
 This is a basic Chrome Extensions boilerplate to help you write modular and modern Javascript code, load CSS easily and [automatic reload the browser on code changes](https://webpack.github.io/docs/webpack-dev-server.html#automatic-refresh).
 
 This boilerplate is updated with:
